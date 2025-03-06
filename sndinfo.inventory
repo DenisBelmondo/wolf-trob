@@ -1,0 +1,64 @@
+inventory/helmet/pickup "sounds/belmondo/tob/items/armbo_up.wav"
+inventory/armor/pickup "sounds/belmondo/tob/items/armor_up.wav"
+inventory/grosse/pickup "sounds/belmondo/tob/items/grosse_up.wav"
+
+inventory/key/pickup "sounds/belmondo/tob/items/key_up.wav"
+inventory/key/sparkle "sounds/belmondo/tob/items/key_sparkle.wav"
+$volume inventory/key/sparkle 0.1
+$limit inventory/key/sparkle 1 256
+
+inventory/snack/pickup "sounds/belmondo/tob/items/hbo_up.wav"
+$pitchshift inventory/snack/pickup 0
+
+inventory/dogfood/pickup "sounds/belmondo/tob/items/dogfood_up.wav"
+$pitchshift inventory/dogfood/pickup 0
+
+inventory/dinner/pickup "sounds/belmondo/tob/items/dinner_up.wav"
+$pitchshift inventory/dinner/pickup 0
+
+inventory/medkit/pickup "sounds/belmondo/tob/items/medkit_up.wav"
+
+inventory/medkit/use "sounds/belmondo/tob/items/medkit_use.wav"
+$pitchshift inventory/medkit/use 0
+
+$alias inventory/firstaid/pickup inventory/medkit/use
+
+inventory/extralife/pickup "sounds/belmondo/tob/items/1up_up.wav"
+
+misc/w_pkup "sounds/belmondo/tob/items/weapon_up.wav"
+
+inventory/ammo/pickup "sounds/belmondo/tob/items/ammo_up.wav"
+
+inventory/ammobox/pickup "sounds/belmondo/tob/items/ammobox_up.wav"
+
+inventory/floorplans/pickup "sounds/belmondo/tob/items/map_up.ogg"
+
+inventory/wine/pickup "sounds/belmondo/tob/items/wine_up.wav"
+inventory/wine/use "sounds/belmondo/tob/items/wine_use.wav"
+
+inventory/pill/pickup "sounds/belmondo/tob/items/pill_up.wav"
+inventory/pill/use "sounds/belmondo/tob/items/pill_use.wav"
+inventory/pill/swallow "sounds/belmondo/tob/items/pill_swallow.wav"
+
+inventory/dana "sounds/belmondo/tob/items/dana.flac"
+$volume inventory/dana 0.5
+$pitchshift inventory/dana 0
+
+inventory/backpack/pickup "sounds/belmondo/tob/items/backpack_up.wav"
+
+inventory/grenade/pickup "sounds/belmondo/tob/items/nade_up.wav"
+
+inventory/heliofly/pickup "sounds/belmondo/tob/items/hback_up.wav"
+$volume inventory/heliofly/pickup 0.33333334
+inventory/heliofly/use "sounds/belmondo/tob/items/heliofly_use.wav"
+$volume inventory/heliofly/use 0.66666667
+
+inventory/syringe/insert "sounds/belmondo/tob/items/syringe_in.wav"
+inventory/bandage/wrap "sounds/belmondo/tob/items/bandage_wrap.wav"
+inventory/bandage/bg "sounds/belmondo/tob/items/bandaging_1.wav"
+inventory/portable_medkit/open "sounds/belmondo/tob/items/medkit_open.wav"
+inventory/portable_medkit/lower "sounds/belmondo/tob/items/medkit_lower.wav"
+
+inventory/uniform/pickup "sounds/belmondo/tob/items/uniform_up.wav"
+
+inventory/wupgrade/pickup "sounds/belmondo/tob/items/wupgrade_up.wav"

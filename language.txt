@@ -1,0 +1,85 @@
+[enu default]
+
+TOB_AUDIO_CREDITS =
+    "Bungie\n"
+    "Crowbar Collective\n"
+    "Enterbrain\n"
+    "Fistful of Frags Team\n"
+    "Futon @GameBanana\n"
+    "Grey Matter Interactive\n"
+    "Hollywood Edge\n"
+    "HughMann @GameBanana\n"
+    "Id Software\n"
+    "Infinity Ward\n"
+    "LloydEvans09 @FreeSound\n"
+    "MachineGames\n"
+    "MacPlay\n"
+    "Magmacow @GameBanana\n"
+    "Midway\n"
+    "Netherrealm Studios\n"
+    "Park ESM\n"
+    "Pluralz @FreeSound\n"
+    "Resistance and Liberation Team\n"
+    "SeanTheBermanator @Doomworld\n"
+    "Sound Ideas\n"
+    "Strelok @GameBanana\n"
+    "Sven Co-op Team\n"
+    "Trappa @GameBanana\n"
+    "Tripwire Interactive\n"
+    "Turtle Rock Studios\n"
+    "UnderlinedDesigns @FreeSound\n"
+    "Valve Corporation\n"
+    "WSJ @DieHard Wolfers\n"
+    "xLongWayHome @GameBanana\n"
+    "\n\n"
+    ;
+
+TOB_ART_CREDITS =
+    "3D Realms\n"
+    "Ac!d @ZDoom\n"
+    "Amuscaria @ZDoom\n"
+    "AReyeP\n"
+    "Blox @ZDoom\n"
+    "Captain J @ZDoom\n"
+    "Captain Toenail @ZDoom\n"
+    "Chronoteeth @ZDoom\n"
+    "EnsaladaDeTomate @ZDoom\n"
+    "Enterbrain\n"
+    "FormGen Corporation\n"
+    "Gifty @ZDoom\n"
+    "hidfan @Doomworld\n"
+    "Id Software\n"
+    "Jimmy @ZDoom\n"
+    "JoeyTD @ZDoom\n"
+    "Lordsmash @ZDoom\n"
+    "MachineGames\n"
+    "MacPlay\n"
+    "Midway\n"
+    "Mike12 @ZDoom\n"
+    "Monolith Productions\n"
+    "Nash @ZDoom\n"
+    "Nazca Corporation\n"
+    "Pierre Ramirez @Doom X\n"
+    "Raven Software\n"
+    "Scuba Steve @Doomworld\n"
+    "torridgristle @ZDoom\n"
+    "Woolie Wool @ZDoom\n"
+    "WSJ @DieHard Wolfers\n"
+    "Xatrix Entertainment\n"
+    ;
+
+QUITMSG   = "Dost thou wish to\nleave with such hasty\nabandon?";
+QUITMSG1  = "Chickening out...\nalready?";
+QUITMSG2  = "Press N for more carnage.\nPress Y to be a weenie.";
+QUITMSG3  = "So, you think you can\nquit this easily, huh?";
+QUITMSG4  = "Press N if you are brave.\nPress Y to cower in shame.";
+QUITMSG5  = "Heroes, press N.\nWimps, press Y.";
+QUITMSG6  = "You are at an intersection.\nA sign says, 'Press Y to quit.'\n>";
+QUITMSG7  = "For guns and glory, press N.\nFor work and worry, press Y.";
+QUITMSG8  = "Heroes don't quit, but\ngo ahead and press Y\nif you aren't one.";
+QUITMSG9  = "Press Y to quit,\nor press N to enjoy\nmore violent diversion.";
+QUITMSG10 = "Depressing the Y key means\nyou must return to the\nhumdrum workday world.";
+QUITMSG11 = "Hey, quit or play,\nY or N:\nit's your choice.";
+QUITMSG12 = "Sure you don't want to\nwaste a few more\nproductive hours?";
+QUITMSG13 = "If you are tough, press N.\nIf not, press Y daintily.";
+QUITMSG14 = "Sure. Fine. Quit.\nSee if we care.\nGet it over with.\nPress Y.";

@@ -1,0 +1,130 @@
+GameInfo
+{
+    TitleMusic = "0TIPTOEF"
+    TitlePage = "TITLEPIC"
+    InfoPage = "HELP"
+    CursorPic = "graphics/belmondo/tob/g_cursor.png"
+	IntermissionMusic = "ENDLEVEL"
+	AddEventHandlers = "TOB_GameInfoHandler",
+                       "TOB_MusicHandler",
+                       "TOB_PlayerDeathHandler",
+                       "TOB_SoDHandler",
+                       "TOB_ScoreHandler",
+                       "TOB_ToastHandler"
+    PlayerClasses = "TOB_Player"// , "TOB_Player" this is for testing the class select screen
+    // ForceTextInMenus = true
+    StatusBarClass = "TOB_StatusBar"
+    IntermissionCounter = true
+    StatScreen_Single = "TOB_StatusScreen"
+    GibHealth = 0.5
+    BorderFlat = "flats/f_border.png"
+    Border = 4, 16,
+        "bordtr", "bordt", "bordtl",
+        "bordr", "bordl",
+        "bordbr", "bordb", "bordbl"
+    QuitMessages =
+        "Dost thou wish to\nleave with such hasty\nabandon?",
+        "Chickening out...\nalready?",
+        "Press N for more carnage.\nPress Y to be a weenie.",
+        "So, you think you can\nquit this easily, huh?",
+        "Press N to save the world.\nPress Y to abandon it in\nits hour of need.",
+        "Press N if you are brave.\nPress Y to cower in shame.",
+        "Heroes, press N.\nWimps, press Y.",
+        "You are at an intersection.\nA sign says, 'Press Y to quit.'",
+        "For guns and glory, press N.\nFor work and worry, press Y.",
+        "Heroes don't quit, but\ngo ahead and press Y\nif you aren't one.",
+        "Press Y to quit,\nor press N to enjoy\nmore violent diversion.",
+        "Depressing the Y key means\nyou must return to the\nhumdrum workday world.",
+        "Hey, quit or play,\nY or N:\nit's your choice.",
+        "Sure you don't want to\nwaste a few more\nproductive hours?",
+        "I think you had better\nplay some more. Please\npress N...please?",
+        "If you are tough, press N.\nIf not, press Y daintily.",
+        "I'm thinkin' that\nyou might wanna press N\nto play more. You do it.",
+        "Sure. Fine. Quit.\nSee if we care.\nGet it over with.\nPress Y."
+    MenuFontColor_Action = "DarkGrey"
+    MenuFontColor_Header = "TOB_Yellow"
+    MenuFontColor_Label = "TOB_Yellow"
+    MenuFontColor_Selection = "TOB_White"
+    MenuFontColor_Title = "TOB_Green"
+    MenuFontColor_Value = "TOB_White"
+    DimColor = "00 00 00"
+    DimAmount = 0.9
+    FinaleMusic = "POW"
+}
+
+AddDefaultMap
+{
+    BorderTexture = "flats/f_border.png"
+}
+
+clearskills
+
+skill Baby
+{
+    AutoUseHealth
+    DamageFactor = 0.25
+    EasyBossBrain
+    SpawnFilter = Baby
+    Name = "Can I Play, Daddy?"
+    Key = "c"
+    TextColor = "LightBlue"
+    PicName = "graphics/belmondo/tob/g_skill_baby.png"
+}
+
+skill Easy
+{
+    EasyBossBrain
+    SpawnFilter = Baby
+    Name = "Don't Hurt Me!"
+    Key = "d"
+    TextColor = "Cyan"
+    PicName = "graphics/belmondo/tob/g_skill_kid.png"
+}
+
+skill Normal
+{
+    SpawnFilter = Easy
+    Name = "Bring 'em On!"
+    Key = "b"
+    TextColor = "TOB_Green"
+    DefaultSkill
+    PicName = "graphics/belmondo/tob/g_skill_teen.png"
+}
+
+skill Hard
+{
+    SpawnFilter = Normal
+    Name = "Do or die!"
+    Key = "d"
+    TextColor = "Fire"
+    PicName = "graphics/belmondo/tob/g_skill_true.png"
+}
+
+skill Harder
+{
+    SpawnFilter = Hard
+    Name = "I am Death Incarnate!"
+    Key = "i"
+    TextColor = "Yellow"
+    PicName = "graphics/belmondo/tob/g_skill_grownup.png"
+}
+
+skill Uber
+{
+    SpawnFilter = Nightmare
+    Name = "Mein Leben!"
+    Key = "u"
+    TextColor = "Red"
+    AmmoFactor = 2
+    Aggressiveness = 1.0
+    FastMonsters
+    NoPain
+    DisableCheats
+    MustConfirm = "Prove your worth, human."
+    PicName = "graphics/belmondo/tob/g_skill_uber.png"
+}
+
+DoomEdNums
+{
+    31133709 = TOB_DontChangeMusicMarker
+}

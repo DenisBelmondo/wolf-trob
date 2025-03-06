@@ -1,0 +1,213 @@
+weapons/whizz_0 "sounds/belmondo/tob/weapons/whizz_0.wav"
+weapons/whizz_1 "sounds/belmondo/tob/weapons/whizz_1.wav"
+weapons/whizz_2 "sounds/belmondo/tob/weapons/whizz_2.wav"
+weapons/whizz_3 "sounds/belmondo/tob/weapons/whizz_3.wav"
+weapons/whizz_4 "sounds/belmondo/tob/weapons/whizz_4.wav"
+weapons/whizz_5 "sounds/belmondo/tob/weapons/whizz_5.wav"
+weapons/whizz_6 "sounds/belmondo/tob/weapons/whizz_6.wav"
+
+$random weapons/whizz
+{
+    weapons/whizz_0
+    weapons/whizz_1
+    weapons/whizz_2
+    weapons/whizz_3
+    weapons/whizz_4
+    weapons/whizz_5
+    weapons/whizz_6
+}
+
+weapon/dryfire "sounds/belmondo/tob/weapons/weapon_dryfire.wav"
+weapon/upgrade "sounds/belmondo/tob/weapons/weapon_upgrade.wav"
+
+weapons/knife/select_0 "sounds/belmondo/tob/weapons/knife_draw_0.wav"
+weapons/knife/select_1 "sounds/belmondo/tob/weapons/knife_draw_1.wav"
+
+$random weapons/knife/select
+{
+    weapons/knife/select_0
+    weapons/knife/select_1
+}
+
+$volume weapons/knife/select 0.5
+
+weapons/knife/fire "sounds/belmondo/tob/weapons/knife-1.wav"
+
+weapons/knife/slash_0 "sounds/belmondo/tob/weapons/knife_slash_0.ogg"
+weapons/knife/slash_1 "sounds/belmondo/tob/weapons/knife_slash_1.ogg"
+
+$random weapons/knife/slash
+{
+    weapons/knife/slash_0
+    weapons/knife/slash_1
+}
+
+$limit weapons/knife/slash 0
+
+weapons/knife/miss "sounds/belmondo/tob/weapons/knife_miss_0.ogg"
+$limit weapons/knife/miss 0
+
+weapons/pistol/fire "sounds/belmondo/tob/weapons/pistol-1.wav"
+$volume weapons/pistol/fire 0.8
+weapons/pistol/clipout "sounds/belmondo/tob/weapons/pistol_clipout.wav"
+$volume weapons/pistol/clipout 0.4
+weapons/pistol/clipin "sounds/belmondo/tob/weapons/pistol_clipin.wav"
+$volume weapons/pistol/clipin 0.4
+weapons/pistol/select "sounds/belmondo/tob/weapons/pistol_select.wav"
+
+weapons/machinegun/fire "sounds/belmondo/tob/weapons/mgun-1.wav"
+$volume weapons/machinegun/fire 0.667
+$pitchshift weapons/machinegun/fire 5
+weapons/machinegun/select "sounds/belmondo/tob/weapons/mgun_select.wav"
+$volume weapons/machinegun/select 0.5
+
+weapons/machinegun/clipout "sounds/belmondo/tob/weapons/mgun_clipout.wav"
+$volume weapons/machinegun/clipout 0.4
+weapons/machinegun/clipin "sounds/belmondo/tob/weapons/mgun_clipin.wav"
+$volume weapons/machinegun/clipin 0.4
+weapons/machinegun/boltpull "sounds/belmondo/tob/weapons/mgun_boltpull.wav"
+$volume weapons/machinegun/boltpull 0.4
+
+weapons/machinegun/altclipout "sounds/belmondo/tob/weapons/mgun_clipout2.wav"
+$volume weapons/machinegun/clipout 0.6
+weapons/machinegun/altclipin "sounds/belmondo/tob/weapons/mgun_clipin2_0.wav"
+$volume weapons/machinegun/clipin 0.6
+weapons/machinegun/altclipin2 "sounds/belmondo/tob/weapons/mgun_clipin2_1.wav"
+$volume weapons/machinegun/clipin2 0.6
+
+weapons/rifle/start "sounds/belmondo/tob/weapons/rifle_start.wav"
+$volume weapons/rifle/start 0.6
+weapons/rifle/fire "sounds/belmondo/tob/weapons/rifle-1.wav"
+$volume weapons/rifle/fire 0.7
+weapons/rifle/select "sounds/belmondo/tob/weapons/rifle_select.wav"
+
+weapons/rifle/bolt_0 "sounds/belmondo/tob/weapons/rifle_bolt_0.wav"
+$volume weapons/rifle/bolt_0 0.4
+weapons/rifle/bolt_1 "sounds/belmondo/tob/weapons/rifle_bolt_1.wav"
+$volume weapons/rifle/bolt_1 0.4
+
+weapons/rifle/insert "sounds/belmondo/tob/weapons/rifle_insert.wav"
+$volume weapons/rifle/insert 0.7
+
+weapons/assault/start "sounds/belmondo/tob/weapons/arifle_start.wav"
+$volume weapons/assault/start 0.7
+weapons/assault/fire "sounds/belmondo/tob/weapons/arifle-1.wav"
+$volume weapons/assault/fire 0.4
+
+weapons/assault/clipout "sounds/belmondo/tob/weapons/arifle_clipout.ogg"
+weapons/assault/clipin "sounds/belmondo/tob/weapons/arifle_clipin.ogg"
+
+$volume weapons/assault/clipout 0.7
+$volume weapons/assault/clipin 0.7
+weapons/assault/select "sounds/belmondo/tob/weapons/arifle_select.wav"
+$volume weapons/assault/select 0.5
+
+weapons/chaingun/spin_0 "sounds/belmondo/tob/weapons/chaingun_spin_0.wav"
+weapons/chaingun/spin_1 "sounds/belmondo/tob/weapons/chaingun_spin_1.wav"
+weapons/chaingun/fire "sounds/belmondo/tob/weapons/chaingun-1.wav"
+weapons/chaingun/fx "sounds/belmondo/tob/weapons/chaingun-fx.ogg"
+weapons/chaingun/select "sounds/belmondo/tob/weapons/bigboy_select.wav"
+$volume weapons/chaingun/fire 0.7
+
+weapons/bazooka/fire "sounds/belmondo/tob/weapons/bazooka-1.flac"
+weapons/bazooka/reload "sounds/belmondo/tob/weapons/bazooka_reload.wav"
+weapons/bazooka/select "sounds/belmondo/tob/weapons/bigboy_select.wav"
+
+weapons/bazooka/rocket/fly "sounds/belmondo/tob/weapons/rocket_fly_0.wav"
+$rolloff wepaons/bazooka/rocket/fly 600 3600
+
+weapons/leichenfaust/fire "sounds/belmondo/tob/weapons/leichen-1.wav"
+
+weapons/fthrow/start "sounds/belmondo/tob/weapons/fthrow-1.wav"
+weapons/fthrow/fire "sounds/belmondo/tob/weapons/fthrow-3.wav"
+weapons/fthrow/end "sounds/belmondo/tob/weapons/fthrow-2.wav"
+weapons/fthrow/select "sounds/belmondo/tob/weapons/fthrow_select.wav"
+$volume weapons/fthrow/select 0.5
+
+weapons/tesla/idle_0 "sounds/belmondo/tob/weapons/tesla_idle_0.wav"
+weapons/tesla/idle_1 "sounds/belmondo/tob/weapons/tesla_idle_1.wav"
+weapons/tesla/idle_2 "sounds/belmondo/tob/weapons/tesla_idle_2.wav"
+
+$random weapons/tesla/idle
+{
+    weapons/tesla/idle_0
+    weapons/tesla/idle_1
+    weapons/tesla/idle_2
+}
+
+weapons/tesla/fire "sounds/belmondo/tob/weapons/tesla-1.wav"
+
+weapons/grenade/pin "sounds/belmondo/tob/weapons/pin.wav"
+weapons/grenade/throw "sounds/belmondo/tob/weapons/grenade_throw.wav"
+
+weapons/grenade/bounce_0 "sounds/belmondo/tob/weapons/grenade_bounce_0.wav"
+weapons/grenade/bounce_1 "sounds/belmondo/tob/weapons/grenade_bounce_1.wav"
+weapons/grenade/bounce_2 "sounds/belmondo/tob/weapons/grenade_bounce_2.wav"
+
+$random weapons/grenade/bounce
+{
+    weapons/grenade/bounce_0
+    weapons/grenade/bounce_1
+    weapons/grenade/bounce_2
+}
+
+weapons/dryfire "sounds/belmondo/tob/weapons/dryfire.wav"
+
+weapons/ricochet_0 "sounds/belmondo/tob/weapons/rico_0.wav"
+weapons/ricochet_1 "sounds/belmondo/tob/weapons/rico_1.wav"
+weapons/ricochet_2 "sounds/belmondo/tob/weapons/rico_2.wav"
+weapons/ricochet_3 "sounds/belmondo/tob/weapons/rico_3.wav"
+
+$random weapons/ricochet
+{
+    weapons/ricochet_0
+    weapons/ricochet_1
+    weapons/ricochet_2
+    weapons/ricochet_3
+}
+
+$limit weapons/ricochet 1 1200
+
+weapons/explode_0 "sounds/belmondo/tob/weapons/explode_0.wav"
+weapons/explode_1 "sounds/belmondo/tob/weapons/explode_1.wav"
+
+weapons/explode_2 "sounds/belmondo/tob/weapons/explode_2.wav"
+$rolloff weapons/explode_2 600 3600
+
+$random weapons/explode
+{
+    weapons/explode_0
+    weapons/explode_1
+}
+
+$rolloff weapons/explode 600 3600
+
+weapons/explode_leichenfaust_0 "sounds/belmondo/tob/weapons/explode_leichenfaust_0.flac"
+$rolloff weapons/explode_leichenfaust_0 600 3600
+
+weapons/leichenfaust/hitmaker "sounds/belmondo/tob/weapons/leichen_hitmarker.flac"
+
+Weapons/DBZExplode "sounds/belmondo/tob/weapons/dbz_explode_0.wav"
+$volume Weapons/DBZExplode 0.2
+$rolloff Weapons/DBZExplode 600 3600
+
+weapons/enemypistol/fire "sounds/belmondo/tob/weapons/badfire_0.wav"
+weapons/enemymachinegun/fire "sounds/belmondo/tob/weapons/badfire_1.flac"
+weapons/enemyrifle/fire "sounds/belmondo/tob/weapons/badfire_2.wav"
+weapons/enemychaingun/fire "sounds/belmondo/tob/weapons/badfire_3.wav"
+$alias weapons/enemyrifle/bolt_0 weapons/rifle/bolt_0
+$attenuation weapons/enemyrifle/bolt_0 0.1
+
+weapons/kick_whoosh_0 "sounds/belmondo/tob/weapons/kick_whoosh_0.wav"
+
+weapons/kick_0 "sounds/belmondo/tob/weapons/kick_0.wav"
+weapons/kick_1 "sounds/belmondo/tob/weapons/kick_1.wav"
+weapons/kick_2 "sounds/belmondo/tob/weapons/kick_2.wav"
+$random weapons/kick {
+    weapons/kick_0
+    weapons/kick_1
+    weapons/kick_2
+}
+
+weapons/tesla_grenade/explode "sounds/belmondo/tob/weapons/tesla_grenade_explode_0.wav"
+$rolloff weapons/tesla_grenade/explode 600 3600

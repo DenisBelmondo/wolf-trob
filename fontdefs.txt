@@ -1,0 +1,42 @@
+/*SMALLFONT
+{
+    Template wsfn%03d
+}*/
+
+BIGFONT
+{
+    Template wbfn%03d
+}
+
+CREDFONT
+{
+    Template crdfn%03d
+}
+
+MEDNUM
+{
+    0 mfnum0
+    1 mfnum1
+    2 mfnum2
+    3 mfnum3
+    4 mfnum4
+    5 mfnum5
+    6 mfnum6
+    7 mfnum7
+    8 mfnum8
+    9 mfnum9
+}
+
+ODONUM
+{
+    0 wodonum0
+    1 wodonum1
+    2 wodonum2
+    3 wodonum3
+    4 wodonum4
+    5 wodonum5
+    6 wodonum6
+    7 wodonum7
+    8 wodonum8
+    9 wodonum9
+}

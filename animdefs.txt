@@ -1,0 +1,17 @@
+texture optional M_SWAS1
+pic M_SWAS1 tics 3
+pic M_SWAS2 tics 3
+pic M_SWAS3 tics 3
+
+texture optional g_bji_0
+pic "graphics/belmondo/tob/g_bji_0.png" tics 17
+pic "graphics/belmondo/tob/g_bji_1.png" tics 17
+
+WARP texture WGSTA0 4
+WARP texture WGSTB0 4
+WARP texture WGSTC0 4
+WARP texture WGSTD0 4
+WARP texture WGSTE0 4
+WARP texture WGSTF0 4
+WARP texture WGSTG0 4
+WARP texture WGSTH0 4

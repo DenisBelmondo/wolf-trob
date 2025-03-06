@@ -1,0 +1,363 @@
+TOB_Monster/Gear_0 "sounds/belmondo/tob/npcs/gear_0.wav"
+TOB_Monster/Gear_1 "sounds/belmondo/tob/npcs/gear_1.wav"
+TOB_Monster/Gear_2 "sounds/belmondo/tob/npcs/gear_2.wav"
+TOB_Monster/Gear_3 "sounds/belmondo/tob/npcs/gear_3.wav"
+TOB_Monster/Gear_4 "sounds/belmondo/tob/npcs/gear_4.wav"
+
+$random TOB_Monster/Gear
+{
+    TOB_Monster/Gear_0
+    TOB_Monster/Gear_1
+    TOB_Monster/Gear_2
+    TOB_Monster/Gear_3
+    TOB_Monster/Gear_4
+}
+
+$limit TOB_Monster/Gear 2 2048
+$volume TOB_Monster/Gear 0.125
+
+TOB_Monster/Boot_0 "sounds/belmondo/tob/npcs/boot_0.wav"
+TOB_Monster/Boot_1 "sounds/belmondo/tob/npcs/boot_1.wav"
+TOB_Monster/Boot_2 "sounds/belmondo/tob/npcs/boot_2.wav"
+TOB_Monster/Boot_3 "sounds/belmondo/tob/npcs/boot_3.wav"
+TOB_Monster/Boot_4 "sounds/belmondo/tob/npcs/boot_4.wav"
+TOB_Monster/Boot_5 "sounds/belmondo/tob/npcs/boot_5.wav"
+TOB_Monster/Boot_6 "sounds/belmondo/tob/npcs/boot_6.wav"
+
+$random TOB_Monster/Boot
+{
+    TOB_Monster/Boot_0
+    TOB_Monster/Boot_1
+    TOB_Monster/Boot_2
+    TOB_Monster/Boot_3
+    TOB_Monster/Boot_4
+    TOB_Monster/Boot_5
+    TOB_Monster/Boot_6
+}
+
+$random TOB_Monster/Thump
+{
+    TOB_Monster/Thump_0
+    TOB_Monster/Thump_3
+    TOB_Monster/Thump_2
+    TOB_Monster/Thump_1
+}
+
+TOB_Monster/Thump_0 "sounds/belmondo/tob/npcs/thump_0.wav"
+TOB_Monster/Thump_3 "sounds/belmondo/tob/npcs/thump_1.wav"
+TOB_Monster/Thump_2 "sounds/belmondo/tob/npcs/thump_2.wav"
+TOB_Monster/Thump_1 "sounds/belmondo/tob/npcs/thump_3.wav"
+
+TOB_Monster/Ignite "sounds/belmondo/tob/npcs/ignite.wav"
+
+$limit TOB_Monster/Boot 2 2048
+$volume TOB_Monster/Boot 0.1
+
+TOB_BossRocket/Sight "sounds/belmondo/tob/npcs/brocket_sight.wav"
+
+TOB_Guard/Sight_0 "sounds/belmondo/tob/npcs/grd_sight_0.wav"
+TOB_Guard/Sight_1 "sounds/belmondo/tob/npcs/grd_sight_1.wav"
+TOB_Guard/Sight_2 "sounds/belmondo/tob/npcs/grd_sight_2.wav"
+TOB_Guard/Sight_3 "sounds/belmondo/tob/npcs/grd_sight_3.wav"
+
+$random TOB_Guard/Sight
+{
+    TOB_Guard/Sight_0
+    TOB_Guard/Sight_1
+    TOB_Guard/Sight_2
+    TOB_Guard/Sight_3
+}
+
+TOB_Guard/Pain "sounds/belmondo/tob/npcs/grd_pain.wav"
+
+TOB_Guard/Death_0 "sounds/belmondo/tob/npcs/grd_death_0.wav"
+TOB_Guard/Death_1 "sounds/belmondo/tob/npcs/grd_death_1.wav"
+TOB_Guard/Death_2 "sounds/belmondo/tob/npcs/grd_death_2.wav"
+TOB_Guard/Death_3 "sounds/belmondo/tob/npcs/grd_death_3.wav"
+TOB_Guard/Death_4 "sounds/belmondo/tob/npcs/grd_death_4.wav"
+TOB_Guard/Death_5 "sounds/belmondo/tob/npcs/grd_death_5.wav"
+TOB_Guard/Death_6 "sounds/belmondo/tob/npcs/grd_death_6.wav"
+TOB_Guard/Death_7 "sounds/belmondo/tob/npcs/grd_death_7.wav"
+TOB_Guard/Death_8 "sounds/belmondo/tob/npcs/grd_death_8.wav"
+TOB_Guard/Death_9 "sounds/belmondo/tob/npcs/grd_death_9.wav"
+TOB_Guard/Death_10 "sounds/belmondo/tob/npcs/grd_death_10.wav"
+TOB_Guard/Death_11 "sounds/belmondo/tob/npcs/grd_death_11.wav"
+TOB_Guard/Death_12 "sounds/belmondo/tob/npcs/grd_death_12.flac"
+TOB_Guard/Death_13 "sounds/belmondo/tob/npcs/grd_death_13.flac"
+TOB_Guard/Death_14 "sounds/belmondo/tob/npcs/grd_death_14.flac"
+TOB_Guard/Death_15 "sounds/belmondo/tob/npcs/grd_death_15.flac"
+
+$random TOB_Guard/Death
+{
+    TOB_Guard/Death_0
+    TOB_Guard/Death_1
+    TOB_Guard/Death_2
+    TOB_Guard/Death_3
+    TOB_Guard/Death_4
+    TOB_Guard/Death_5
+    TOB_Guard/Death_6
+    TOB_Guard/Death_7
+    TOB_Guard/Death_8
+    TOB_Guard/Death_9
+    TOB_Guard/Death_10
+    TOB_Guard/Death_11
+    TOB_Guard/Death_12
+    TOB_Guard/Death_13
+    TOB_Guard/Death_14
+    TOB_Guard/Death_15
+}
+
+$volume TOB_Guard/Death 0.7
+
+TOB_SSGuard/Sight_0 "sounds/belmondo/tob/npcs/ss_sight_0.wav"
+TOB_SSGuard/Sight_1 "sounds/belmondo/tob/npcs/ss_sight_1.wav"
+
+$pitchset TOB_SSGuard/Sight_0 0.9
+$pitchset TOB_SSGuard/Sight_1 0.9
+
+$random TOB_SSGuard/Sight
+{
+    TOB_SSGuard/Sight_0
+    TOB_SSGuard/Sight_1
+}
+
+TOB_SSGuard/Pain "sounds/belmondo/tob/npcs/ss_pain.wav"
+
+TOB_SSGuard/Death_0 "sounds/belmondo/tob/npcs/grd_death_0.wav"
+TOB_SSGuard/Death_1 "sounds/belmondo/tob/npcs/grd_death_1.wav"
+TOB_SSGuard/Death_2 "sounds/belmondo/tob/npcs/grd_death_2.wav"
+TOB_SSGuard/Death_3 "sounds/belmondo/tob/npcs/grd_death_3.wav"
+TOB_SSGuard/Death_4 "sounds/belmondo/tob/npcs/grd_death_4.wav"
+TOB_SSGuard/Death_5 "sounds/belmondo/tob/npcs/grd_death_5.wav"
+TOB_SSGuard/Death_6 "sounds/belmondo/tob/npcs/grd_death_6.wav"
+TOB_SSGuard/Death_7 "sounds/belmondo/tob/npcs/grd_death_7.wav"
+TOB_SSGuard/Death_8 "sounds/belmondo/tob/npcs/grd_death_8.wav"
+TOB_SSGuard/Death_9 "sounds/belmondo/tob/npcs/grd_death_9.wav"
+TOB_SSGuard/Death_10 "sounds/belmondo/tob/npcs/grd_death_10.wav"
+TOB_SSGuard/Death_11 "sounds/belmondo/tob/npcs/grd_death_11.wav"
+TOB_SSGuard/Death_12 "sounds/belmondo/tob/npcs/grd_death_12.flac"
+TOB_SSGuard/Death_13 "sounds/belmondo/tob/npcs/grd_death_13.flac"
+TOB_SSGuard/Death_14 "sounds/belmondo/tob/npcs/grd_death_14.flac"
+TOB_SSGuard/Death_15 "sounds/belmondo/tob/npcs/grd_death_15.flac"
+
+// specials
+TOB_SSGuard/Death_16 "sounds/belmondo/tob/npcs/ss_death_0.wav"
+TOB_SSGuard/Death_17 "sounds/belmondo/tob/npcs/ss_death_1.wav"
+
+$pitchset TOB_SSGuard/Death_0  0.8
+$pitchset TOB_SSGuard/Death_1  0.8
+$pitchset TOB_SSGuard/Death_2  0.8
+$pitchset TOB_SSGuard/Death_3  0.8
+$pitchset TOB_SSGuard/Death_4  0.8
+$pitchset TOB_SSGuard/Death_5  0.8
+$pitchset TOB_SSGuard/Death_6  0.8
+$pitchset TOB_SSGuard/Death_7  0.8
+$pitchset TOB_SSGuard/Death_8  0.8
+$pitchset TOB_SSGuard/Death_9  0.8
+$pitchset TOB_SSGuard/Death_10 0.8
+$pitchset TOB_SSGuard/Death_11 0.8
+$pitchset TOB_SSGuard/Death_16 0.9
+
+$random TOB_SSGuard/Death_A
+{
+    TOB_SSGuard/Death_0
+    TOB_SSGuard/Death_1
+    TOB_SSGuard/Death_2
+    TOB_SSGuard/Death_3
+    TOB_SSGuard/Death_4
+    TOB_SSGuard/Death_5
+    TOB_SSGuard/Death_6
+    TOB_SSGuard/Death_7
+    TOB_SSGuard/Death_8
+    TOB_SSGuard/Death_9
+    TOB_SSGuard/Death_10
+    TOB_SSGuard/Death_11
+}
+
+$volume TOB_SSGuard/Death_A 0.7
+
+$random TOB_SSGuard/Death
+{
+    TOB_SSGuard/Death_A
+    TOB_SSGuard/Death_A
+    TOB_SSGuard/Death_16
+    TOB_SSGuard/Death_17
+}
+
+TOB_Officer/Sight_0 "sounds/belmondo/tob/npcs/ofc_sight_0.wav"
+TOB_Officer/Sight_1 "sounds/belmondo/tob/npcs/ofc_sight_1.wav"
+
+$random TOB_Officer/Sight
+{
+    TOB_Officer/Sight_0
+    TOB_Officer/Sight_1
+}
+
+TOB_Officer/Pain "sounds/belmondo/tob/npcs/ofc_pain.wav"
+TOB_Officer/Death/Nein_0 "sounds/belmondo/tob/npcs/ofc_death_0.wav"
+TOB_Officer/Death/Nein_1 "sounds/belmondo/tob/npcs/ofc_death_1.wav"
+
+$random TOB_Officer/Death/Nein {
+    TOB_Officer/Death/Nein_0
+    TOB_Officer/Death/Nein_1
+}
+
+$random TOB_Officer/Death
+{
+    TOB_Officer/Death/Nein
+    TOB_Guard/Death
+}
+
+TOB_Mutant/Pain "sounds/belmondo/tob/npcs/mut_pain.wav"
+
+TOB_Mutant/Death_0 "sounds/belmondo/tob/npcs/mut_death_0.wav"
+TOB_Mutant/Death_1 "sounds/belmondo/tob/npcs/mut_death_1.wav"
+TOB_Mutant/Death_2 "sounds/belmondo/tob/npcs/mut_death_2.wav"
+
+$random TOB_Mutant/Death
+{
+    TOB_Mutant/Death_0
+    TOB_Mutant/Death_1
+    TOB_Mutant/Death_2
+}
+
+TOB_Loper/Sight_0 "sounds/belmondo/tob/npcs/lpr_sight_0.wav"
+TOB_Loper/Sight_1 "sounds/belmondo/tob/npcs/lpr_sight_1.mp3"
+
+$random TOB_Loper/Sight
+{
+    TOB_Loper/Sight_0
+    TOB_Loper/Sight_1
+}
+
+TOB_Loper/Start "sounds/belmondo/tob/npcs/lpr_start.wav"
+TOB_Loper/Loop "sounds/belmondo/tob/npcs/lpr_loop.wav"
+
+TOB_Loper/Pain "sounds/belmondo/tob/npcs/lpr_pain.mp3"
+
+TOB_Loper/Death_0 "sounds/belmondo/tob/npcs/lpr_death_0.mp3"
+TOB_Loper/Death_1 "sounds/belmondo/tob/npcs/lpr_death_1.mp3"
+
+$random TOB_Loper/Death
+{
+    TOB_Loper/Death_0
+    TOB_Loper/Death_1
+}
+
+TOB_FakeHitler/Sight_0 "sounds/belmondo/tob/npcs/fake_sight_0.wav"
+TOB_FakeHitler/Sight_1 "sounds/belmondo/tob/npcs/fake_sight_1.wav"
+
+$random TOB_FakeHitler/Sight
+{
+    TOB_FakeHitler/Sight_0
+    TOB_FakeHitler/Sight_1
+}
+
+TOB_FakeHitler/Death "sounds/belmondo/tob/npcs/fake_death.wav"
+TOB_FakeHitler/Shoot "sounds/belmondo/tob/npcs/fake_shoot.wav"
+
+TOB_Dog/Sight "sounds/belmondo/tob/npcs/dog_sight.wav"
+TOB_Dog/Bite "sounds/belmondo/tob/npcs/dog_bite.ogg"
+TOB_Dog/Idle "sounds/belmondo/tob/npcs/dog_idle.wav"
+TOB_Dog/Attack "sounds/belmondo/tob/npcs/dog_attack.wav"
+TOB_Dog/Pain "sounds/belmondo/tob/npcs/dog_pain.wav"
+TOB_Dog/Death "sounds/belmondo/tob/npcs/dog_death.wav"
+
+TOB_WolfensteinMonster/Burn_0 "sounds/belmondo/tob/npcs/burn_0.wav"
+TOB_WolfensteinMonster/Burn_1 "sounds/belmondo/tob/npcs/burn_1.wav"
+TOB_WolfensteinMonster/Burn_2 "sounds/belmondo/tob/npcs/burn_2.wav"
+TOB_WolfensteinMonster/Burn_3 "sounds/belmondo/tob/npcs/burn_3.wav"
+TOB_WolfensteinMonster/Burn_4 "sounds/belmondo/tob/npcs/burn_4.wav"
+TOB_WolfensteinMonster/Burn_5 "sounds/belmondo/tob/npcs/burn_5.wav"
+TOB_WolfensteinMonster/Burn_6 "sounds/belmondo/tob/npcs/burn_6.wav"
+TOB_WolfensteinMonster/Burn_7 "sounds/belmondo/tob/npcs/burn_7.wav"
+TOB_WolfensteinMonster/Burn_8 "sounds/belmondo/tob/npcs/burn_8.mp3"
+TOB_WolfensteinMonster/Burn_9 "sounds/belmondo/tob/npcs/burn_9.mp3"
+TOB_WolfensteinMonster/Burn_10 "sounds/belmondo/tob/npcs/burn_10.wav"
+TOB_WolfensteinMonster/Burn_11 "sounds/belmondo/tob/npcs/burn_11.wav"
+TOB_WolfensteinMonster/Burn_12 "sounds/belmondo/tob/npcs/burn_12.wav"
+
+$random TOB_WolfensteinMonster/Burn
+{
+    TOB_WolfensteinMonster/Burn_0
+    TOB_WolfensteinMonster/Burn_1
+    TOB_WolfensteinMonster/Burn_2
+    TOB_WolfensteinMonster/Burn_3
+    TOB_WolfensteinMonster/Burn_4
+    TOB_WolfensteinMonster/Burn_5
+    TOB_WolfensteinMonster/Burn_6
+    TOB_WolfensteinMonster/Burn_7
+    TOB_WolfensteinMonster/Burn_8
+    TOB_WolfensteinMonster/Burn_9
+    TOB_WolfensteinMonster/Burn_10
+    TOB_WolfensteinMonster/Burn_11
+    TOB_WolfensteinMonster/Burn_12
+}
+
+TOB_WolfensteinBoss/Pain "sounds/belmondo/tob/npcs/boss_pain.wav"
+
+TOB_HansGrosse/Sight "sounds/belmondo/tob/npcs/hans_sight.wav"
+TOB_HansGrosse/Death "sounds/belmondo/tob/npcs/hans_death.wav"
+
+TOB_TransGrosse/Sight "sounds/belmondo/tob/npcs/trans_sight.ogg"
+TOB_TransGrosse/Death "sounds/belmondo/tob/npcs/trans_death.ogg"
+
+TOB_GretelGrosse/Sight "sounds/belmondo/tob/npcs/gretel_sight.wav"
+TOB_GretelGrosse/Death "sounds/belmondo/tob/npcs/gretel_death.wav"
+
+TOB_Ubermutant/Death "sounds/belmondo/tob/npcs/uber_death.wav"
+
+TOB_Otto/Sight "sounds/belmondo/tob/npcs/otto_sight.ogg"
+TOB_Otto/Death "sounds/belmondo/tob/npcs/otto_death.ogg"
+
+TOB_Schabbs/Sight "sounds/belmondo/tob/npcs/schabbs_sight.ogg"
+TOB_Schabbs/Death "sounds/belmondo/tob/npcs/schabbs_death.ogg"
+
+TOB_Skeleton/Attack_0 "sounds/belmondo/tob/npcs/skl_attack_0.wav"
+TOB_Skeleton/Attack_1 "sounds/belmondo/tob/npcs/skl_attack_1.wav"
+TOB_Skeleton/Attack_2 "sounds/belmondo/tob/npcs/skl_attack_2.mp3"
+TOB_Skeleton/Death "sounds/belmondo/tob/npcs/skl_death.wav"
+$rolloff TOB_Skeleton/Death 400 2400
+
+TOB_Nazi/Death/Choke_1 "sounds/belmondo/tob/npcs/drown1.wav"
+TOB_Nazi/Death/Choke_2 "sounds/belmondo/tob/npcs/drown2.wav"
+TOB_Nazi/Death/Choke_3 "sounds/belmondo/tob/npcs/drown3.wav"
+
+$random TOB_Nazi/Death/Choke {
+    TOB_Nazi/Death/Choke_1
+    TOB_Nazi/Death/Choke_2
+    TOB_Nazi/Death/Choke_3
+}
+
+$attenuation TOB_Nazi/Death/Choke 0.25
+
+TOB_Harbinger/Sight "sounds/belmondo/tob/npcs/harbinger_sight.wav"
+TOB_Harbinger/Death "sounds/belmondo/tob/npcs/harbinger_death.wav"
+
+TOB_SuperSoldier/Sight_0 "sounds/belmondo/tob/npcs/super_sight_0.wav"
+TOB_SuperSoldier/Sight_1 "sounds/belmondo/tob/npcs/super_sight_1.wav"
+TOB_SuperSoldier/Sight_2 "sounds/belmondo/tob/npcs/super_sight_2.wav"
+TOB_SuperSoldier/Sight_3 "sounds/belmondo/tob/npcs/super_sight_3.wav"
+
+$random TOB_SuperSoldier/Sight {
+    TOB_SuperSoldier/Sight_0
+    TOB_SuperSoldier/Sight_1
+    TOB_SuperSoldier/Sight_2
+    TOB_SuperSoldier/Sight_3
+}
+
+TOB_SuperSoldier/Death_0 "sounds/belmondo/tob/npcs/super_death_0.wav"
+TOB_SuperSoldier/Death_1 "sounds/belmondo/tob/npcs/super_death_1.wav"
+TOB_SuperSoldier/Death_2 "sounds/belmondo/tob/npcs/super_death_2.wav"
+
+$random TOB_SuperSoldier/Death {
+    TOB_SuperSoldier/Death_0
+    TOB_SuperSoldier/Death_1
+    TOB_SuperSoldier/Death_2
+}
+
+TOB_SuperSoldier/Meme "sounds/belmondo/tob/npcs/super_meme.wav"
+$rolloff TOB_SuperSoldier/Meme 600 3600
+
+TOB_SuperSoldier/Step "sounds/belmondo/tob/npcs/mech_step.wav"
+$volume TOB_SuperSoldier/Step 0.3

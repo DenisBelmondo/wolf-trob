@@ -1,0 +1,82 @@
+DefaultListMenu
+{
+	Font "BigFont", "Cyan", "TOB_Yellow"
+	LineSpacing 18
+    Selector "M_SWAS1", -32, -10
+}
+
+ListMenu "MainMenu"
+{
+    Class "TOB_CenteredMenu"
+    Size "OptClean"
+    Position 160, 72
+
+    StaticPatchCentered 160, 4, "LOGO2"
+
+    TextItem "New Game",   "n", "PlayerClassMenu"
+    TextItem "Options",    "e", "OptionsMenu"
+    TextItem "Load Game",  "l", "LoadGameMenu"
+    TextItem "Save Game",  "s", "SaveGameMenu"
+    TextItem "Read This!", "r", "ReadThisMenu"
+    TextItem "Quit",       "q", "QuitMenu"
+}
+
+ListMenu "PlayerClassMenu"
+{
+    StaticTextCentered 160, 16, "$MNU_CHOOSECLASS", "TOB_Green"
+    Position 40, 48
+    PlayerDisplay 216, 50, "20 00 00", "80 00 40"
+    MouseWindow 0, 220
+}
+
+ListMenu "EpisodeMenu"
+{
+    Class "TOB_CenteredMenu"
+    Size "OptClean"
+	StaticTextCentered 160, 16, "Select scenario:", "TOB_Green"
+	Position 40, 48
+}
+
+ListMenu "SkillMenu"
+{
+    Class "TOB_SkillMenu"
+    Size "OptClean"
+    Position 16, 32
+    LineSpacing 22
+    StaticPatchCentered 160, 16, "graphics/belmondo/tob/g_howtough.png"
+    Selector "M_SWAS1", -32, -8
+}
+
+AddOptionMenu "OptionsMenu"
+{
+    SubMenu "The Really Old Blood Options", "TOB_OptionsMenu"
+}
+
+OptionMenu "TOB_OptionsMenu"
+{
+    Title "The Really Old Blood Options"
+
+    StaticText ""
+    StaticText "Gameplay Options"
+    StaticText ""
+
+    Option "Nazis Always Flinch", "tob_sv_alwayspain", "OnOff"
+    StaticText "Nazis always enter their pain state when hurt."
+
+    StaticText ""
+
+    Option "Last Chance", "tob_sv_lastchance", "OnOff"
+    StaticText "When player health is depleted, they are given a second wind before succumbing."
+
+    StaticText ""
+    StaticText ""
+    StaticText "Client Options"
+    StaticText ""
+
+    Option "Wolf3D Jukebox", "tob_music",    "OnOff"
+    StaticText "Chooses a random Wolfenstein 3D track to play as level music."
+
+    StaticText ""
+    Option "Weeb Mode", "tob_weebmode", "OnOff"
+    StaticText "Omoshiroi..."
+}

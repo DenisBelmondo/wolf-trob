@@ -1,0 +1,19 @@
+TOB_DarkYellow
+{
+    #000000 #bbbb00
+}
+
+TOB_Yellow
+{
+    #2b230f #e3e300
+}
+
+TOB_Green
+{
+    #2b230f #00d300
+}
+
+TOB_White
+{
+    #000000 #ffffff
+}

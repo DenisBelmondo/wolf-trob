@@ -1,0 +1,4 @@
+server bool tob_sv_alwayspain = false;
+server bool tob_sv_lastchance = true;
+user bool tob_music           = true;
+user bool tob_weebmode        = false;

@@ -1,0 +1,73 @@
+TOB_BJ/death "sounds/belmondo/tob/player/bj/death.wav"
+TOB_BJ/fall "sounds/belmondo/tob/player/bj/fall.wav"
+TOB_BJ/oof "sounds/belmondo/tob/player/bj/oof.wav"
+$alias TOB_BJ/grunt TOB_BJ/oof
+TOB_BJ/usefail "sounds/belmondo/tob/player/bj/noway.wav"
+
+TOB_BJ/pain100_0 "sounds/belmondo/tob/player/bj/pain100_0.wav"
+TOB_BJ/pain100_1 "sounds/belmondo/tob/player/bj/pain100_1.wav"
+TOB_BJ/pain100_2 "sounds/belmondo/tob/player/bj/pain100_2.wav"
+$random TOB_BJ/pain100
+{
+    TOB_BJ/pain100_0
+    TOB_BJ/pain100_1
+    TOB_BJ/pain100_2
+}
+
+TOB_BJ/pain50_0 "sounds/belmondo/tob/player/bj/pain50_0.wav"
+TOB_BJ/pain50_1 "sounds/belmondo/tob/player/bj/pain50_1.wav"
+TOB_BJ/pain50_2 "sounds/belmondo/tob/player/bj/pain50_2.wav"
+$random TOB_BJ/pain50
+{
+    TOB_BJ/pain50_0
+    TOB_BJ/pain50_1
+    TOB_BJ/pain50_2
+}
+
+TOB_BJ/pain25_0 "sounds/belmondo/tob/player/bj/pain25_0.wav"
+TOB_BJ/pain25_1 "sounds/belmondo/tob/player/bj/pain25_1.wav"
+TOB_BJ/pain25_2 "sounds/belmondo/tob/player/bj/pain25_2.wav"
+$random TOB_BJ/pain25
+{
+    TOB_BJ/pain25_0
+    TOB_BJ/pain25_1
+    TOB_BJ/pain25_2
+}
+
+TOB_BJ/jump_0 "sounds/belmondo/tob/player/bj/jump_0.wav"
+TOB_BJ/jump_1 "sounds/belmondo/tob/player/bj/jump_1.wav"
+$random TOB_BJ/jump
+{
+    TOB_BJ/jump_0
+    TOB_BJ/jump_1
+}
+
+TOB_BJ/xdeath  "sounds/belmondo/tob/player/bj/xdeath.wav"
+TOB_BJ/gibbed  "sounds/belmondo/tob/player/bj/gibbed.wav"
+TOB_BJ/burn    "sounds/belmondo/tob/player/bj/fall.wav"
+TOB_BJ/land    "sounds/belmondo/tob/player/bj/land.wav"
+TOB_BJ/alright "sounds/belmondo/tob/player/bj/alright.wav"
+TOB_BJ/letsgo  "sounds/belmondo/tob/player/bj/letsgo.wav"
+
+$random TOB_BJ/taunt
+{
+    TOB_BJ/alright
+    TOB_BJ/letsgo
+}
+
+$playeralias    TOB_BJ male *death      TOB_BJ/death
+$playeralias    TOB_BJ male *xdeath     TOB_BJ/xdeath
+$playersounddup TOB_BJ male *wimpydeath *xdeath
+$playersounddup TOB_BJ male *crazydeath *xdeath
+$playeralias    TOB_BJ male *gibbed     TOB_BJ/gibbed
+$playeralias    TOB_BJ male *burndeath  TOB_BJ/gibbed
+$playeralias    TOB_BJ male *pain100    TOB_BJ/pain100
+$playeralias    TOB_BJ male *pain75     TOB_BJ/pain100
+$playeralias    TOB_BJ male *pain50     TOB_BJ/pain50
+$playeralias    TOB_BJ male *pain25     TOB_BJ/pain25
+$playeralias    TOB_BJ male *grunt      TOB_BJ/grunt
+$playeralias    TOB_BJ male *usefail    TOB_BJ/usefail
+$playeralias    TOB_BJ male *land       TOB_BJ/land
+$plaeralias     TOB_BJ male *taunt      TOB_BJ/taunt
+$playeralias    TOB_BJ male *jump       TOB_BJ/jump
+$playeralias    TOB_BJ male *falling    TOB_BJ/fall

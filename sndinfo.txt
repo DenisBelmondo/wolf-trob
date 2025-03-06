@@ -1,0 +1,126 @@
+misc/teleport "sounds/belmondo/tob/misc/teleport.wav"
+
+misc/weapon_soft_0 "sounds/belmondo/tob/misc/weapon_soft_0.wav"
+misc/weapon_soft_1 "sounds/belmondo/tob/misc/weapon_soft_1.wav"
+misc/weapon_soft_2 "sounds/belmondo/tob/misc/weapon_soft_2.wav"
+
+$random misc/weapon_soft
+{
+    misc/weapon_soft_0
+    misc/weapon_soft_1
+    misc/weapon_soft_2
+}
+
+misc/body_hard_0 "sounds/belmondo/tob/misc/body_hard_0.wav"
+misc/body_hard_1 "sounds/belmondo/tob/misc/body_hard_1.wav"
+misc/body_hard_2 "sounds/belmondo/tob/misc/body_hard_2.wav"
+misc/body_hard_3 "sounds/belmondo/tob/misc/body_hard_3.wav"
+
+$random misc/body_hard
+{
+    misc/body_hard_0
+    misc/body_hard_0
+    misc/body_hard_1
+    misc/body_hard_2
+    misc/body_hard_3
+    misc/body_hard_3
+}
+
+misc/bigbody_hard "sounds/belmondo/tob/misc/bigbody_hard_0.wav"
+
+misc/flesh_bullet_0 "sounds/belmondo/tob/misc/flesh_bullet_0.wav"
+misc/flesh_bullet_1 "sounds/belmondo/tob/misc/flesh_bullet_1.wav"
+misc/flesh_bullet_2 "sounds/belmondo/tob/misc/flesh_bullet_2.wav"
+misc/flesh_bullet_3 "sounds/belmondo/tob/misc/flesh_bullet_3.wav"
+misc/flesh_bullet_4 "sounds/belmondo/tob/misc/flesh_bullet_4.wav"
+
+$random misc/flesh_bullet
+{
+    misc/flesh_bullet_0
+    misc/flesh_bullet_1
+    misc/flesh_bullet_2
+    misc/flesh_bullet_3
+    misc/flesh_bullet_4
+}
+
+misc/blood_drip_0 "sounds/belmondo/tob/misc/blood_drip_0.wav"
+misc/blood_drip_1 "sounds/belmondo/tob/misc/blood_drip_1.wav"
+misc/blood_drip_2 "sounds/belmondo/tob/misc/blood_drip_2.wav"
+misc/blood_drip_3 "sounds/belmondo/tob/misc/blood_drip_3.wav"
+
+$random misc/blood_drip
+{
+    misc/blood_drip_0
+    misc/blood_drip_1
+    misc/blood_drip_2
+    misc/blood_drip_3
+}
+
+misc/xdeath_0 "sounds/belmondo/tob/misc/xdeath_0.wav"
+misc/xdeath_1 "sounds/belmondo/tob/misc/xdeath_1.wav"
+misc/xdeath_2 "sounds/belmondo/tob/misc/xdeath_2.wav"
+
+$random misc/xdeath
+{
+    misc/xdeath_0
+    misc/xdeath_1
+    misc/xdeath_2
+}
+
+$limit misc/blood_drip 1 128
+
+misc/tup_0 "sounds/belmondo/tob/misc/tup_0.wav"
+misc/tup_1 "sounds/belmondo/tob/misc/tup_1.wav"
+misc/tup_2 "sounds/belmondo/tob/misc/tup_2.wav"
+
+$random misc/tup
+{
+    misc/tup_0
+    misc/tup_1
+    misc/tup_2
+}
+
+$limit misc/tup 1 256
+
+misc/secret "sounds/belmondo/tob/misc/secret.wav"
+$pitchshift misc/secret 0
+
+misc/anime_blood "sounds/belmondo/tob/misc/anime_blood.wav"
+
+menu/activate "sounds/belmondo/tob/ui/activate.wav"
+menu/cursor "sounds/belmondo/tob/ui/cursor.wav"
+menu/choose "sounds/belmondo/tob/ui/choose.wav"
+
+$alias menu/backup menu/activate
+$alias menu/prompt menu/activate
+$alias menu/change menu/choose
+$alias menu/invalid menu/activate
+$alias menu/dismiss menu/activate
+$alias menu/clear menu/activate
+
+intermission/tick "sounds/belmondo/tob/ui/tick.wav"
+intermission/nextstage "sounds/belmondo/tob/ui/activate.wav"
+intermission/paststats "sounds/belmondo/tob/ui/choose.wav"
+
+scary "sounds/belmondo/tob/misc/player_die.wav"
+$pitchshift scary 0
+
+misc/barrel/break "sounds/belmondo/tob/misc/barrel_break.wav"
+misc/small_fire DSFLAMST
+
+misc/noway "sounds/belmondo/tob/noway.wav"
+$volume misc/noway 0.6
+
+misc/explode_tiny "sounds/belmondo/tob/misc/explosion_tiny.wav"
+
+misc/crash_0 "sounds/belmondo/tob/misc/crash_0.wav"
+misc/crash_1 "sounds/belmondo/tob/misc/crash_1.wav"
+
+$random misc/crash {
+    misc/crash_0
+    misc/crash_1
+}
+
+misc/low_health "sounds/belmondo/tob/ui/low_health.wav"
+misc/p_pkup "sounds/belmondo/tob/items/item_up.wav"
+misc/invuse "sounds/belmondo/tob/items/item_use.wav"

@@ -1,0 +1,17 @@
+generator TOB_Pistol                BulletChip
+generator TOB_MachineGun            BulletChip
+generator TOB_Rifle                 BulletChip
+generator TOB_RiflePowered          Scorch
+generator TOB_AssaultRifle          BulletChip
+generator TOB_Chaingun              BulletChip
+generator TOB_FlameThrowerFlame     Scorch
+generator TOB_BazookaRocket         BigScorch
+generator TOB_BazookaRocketShrapnel BulletChip
+// generator TOB_BossRocket            Scorch
+// generator TOB_FakeHitlerFireBall    Scorch
+generator TOB_LeichenfaustRocket    BFGLightning
+generator TOB_SmallRocket           DoomImpScorch
+
+generator TOB_Bullet         BulletChip
+generator TOB_AccurateBullet BulletChip
+generator TOB_BossBullet     BulletChip
