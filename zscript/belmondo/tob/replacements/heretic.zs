@@ -372,9 +372,12 @@ class TOB_SnakeReplacement : TOB_NaziSpawner replaces Snake
     }
 }
 
-class TOB_AbstractHereticImpReplacer : TOB_NaziSpawner abstract
+class TOB_ShortAndTallReplacer : RandomSpawner abstract
 {
-    abstract Name, Name GetImpSpawns();
+    Class<Actor> shortClass;
+    Class<Actor> tallClass;
+    property ShortClass: shortClass;
+    property TallClass: TallClass;
 
     override Name ChooseSpawn()
     {
@@ -387,34 +390,33 @@ class TOB_AbstractHereticImpReplacer : TOB_NaziSpawner abstract
         let floorz = curSector.floorPlane.ZAtPoint(curSector.centerSpot);
         let ceilz = curSector.ceilingPlane.ZAtPoint(curSector.centerSpot);
         let d = ceilz - floorz;
-        Name spawn1, spawn2;
+        Class<Actor> a = tallClass;
+        let actorDefault = GetDefaultByType(a);
 
-        [spawn1, spawn2] = GetImpSpawns();
-
-        if (d < 512)
+        if (d < actorDefault.height)
         {
-            return spawn1;
+            a = shortClass;
         }
 
-        return spawn2;
+        return a.GetClassName();
     }
 }
 
-// TODO: the shim here where you want to spawn the OG HereticImp is causing
-// infinite recursion and thus causing RandomSpawner to spawn a youfailit
-class TOB_HereticImpReplacement : TOB_AbstractHereticImpReplacer replaces HereticImp
+class TOB_HereticImpReplacement : TOB_ShortAndTallReplacer replaces HereticImp
 {
-    override Name, Name GetImpSpawns()
+    default
     {
-        return 'TOB_Guard', 'HereticImp';
+        TOB_ShortAndTallReplacer.ShortClass 'TOB_Dog';
+        TOB_ShortAndTallReplacer.TallClass 'TOB_Guard';
     }
 }
 
-class TOB_HereticImpLeaderReplacement : TOB_AbstractHereticImpReplacer replaces HereticImpLeader
+class TOB_HereticImpLeaderReplacement : TOB_ShortAndTallReplacer replaces HereticImpLeader
 {
-    override Name, Name GetImpSpawns()
+    default
     {
-        return 'TOB_Rifleman', 'HereticImpLeader';
+        TOB_ShortAndTallReplacer.ShortClass 'TOB_Dog';
+        TOB_ShortAndTallReplacer.TallClass 'TOB_Rifleman';
     }
 }
 

@@ -25,6 +25,7 @@ class TOB_Dog : TOB_Nazi
 
     default
     {
+        Height 32;
         Health 60;
         Speed 8;
         PainChance 32;

@@ -28,7 +28,7 @@ class TOB_MachineGun : TOB_ReloadingWeapon
 
     virtual void FireMachineGun()
     {
-        TOBFireBullets(1.5, 0.75, farDmg: 5, closeDist: 192, puffType: 'TOB_Puff');
+        TOBFireBullets(3.0, 0.75, farDmg: 5, closeDist: 192, puffType: 'TOB_Puff');
         DepleteSubAmmo();
     }
 

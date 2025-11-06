@@ -1,283 +1,299 @@
+class TOB_StatusScreenContext ui
+{
+    StatusScreen mStatusScreen;
+    Font mFont;
+
+    TOB_StatusScreenContext Init(StatusScreen pStatusScreen, Font pFont)
+    {
+        mStatusScreen = pStatusScreen;
+        mFont = pFont;
+
+        return self;
+    }
+}
+
 class TOB_StatusScreenState ui
 {
-    //
-    // fields
-    //
+    private bool _accelerated;
+    protected bool canSkip;
+    readonly<TOB_StatusScreenContext> ctx;
+    bool shouldDraw;
 
-    bool isLast;
-    int ticsLeft;
-    TOB_StatusScreen statusScreen;
-    TOB_StatusScreenState next;
-
-    TOB_StatusScreenState Then(TOB_StatusScreenState next)
+    TOB_StatusScreenState Init(readonly<TOB_StatusScreenContext> ctx)
     {
-        self.next = next;
-        return self;
-    }
-
-    TOB_StatusScreenState Wait(int tics)
-    {
-        ticsLeft = tics;
-        return self;
-    }
-
-    TOB_StatusScreenState Finish()
-    {
-        isLast = true;
-        return self;
-    }
-
-    //
-    // virtual methods
-    //
-
-    protected virtual void _Init() {}
-
-    virtual void Draw() {}
-
-    virtual TOB_StatusScreenState Init(TOB_StatusScreen statusScreen)
-    {
-        self.statusScreen = statusScreen;
+        self.ctx = ctx;
+        canSkip = true;
         _Init();
 
         return self;
     }
 
-    virtual bool IsDone()
+    bool CanBeSkipped()
     {
-        return false;
+        return canSkip;
+    }
+
+    TOB_StatusScreenState SetCanSkip(bool b)
+    {
+        canSkip = b;
+        return self;
+    }
+
+    virtual void _Init()
+    {
     }
 
     virtual void Tick()
     {
-        ticsLeft = clamp(ticsLeft - 1, 0, ticsLeft);
+    }
+
+    virtual void Skip()
+    {
+        _accelerated = true;
+    }
+
+    virtual bool IsDone() const
+    {
+        return _accelerated;
     }
 }
 
-class TOB_InitialStatusScreen : TOB_StatusScreenState
+class TOB_StatusScreenCounter : TOB_StatusScreenState
 {
-    TextureID bjTex;
-    Vector2 bjTexSize;
+    readonly<int> counterLimit;
+    int counterFrequencyTics;    
+    int counterIncrement;
+    int counterCurrent;
 
-    float labelX;
-    float timeStatsX;
-    float percentagesX;
-    float timeY;
-    float parY;
-    float killsY;
-    float itemsY;
-    float secretsY;
-
-    override void _Init()
+    bool CounterIsDone()
     {
-        let currentY = 8;
-
-        bjTex = TexMan.CheckForTexture('g_bji_0');
-        bjTexSize = TexMan.GetScaledSize(bjTex);
-
-        labelX = 8;
-        timeStatsX = 8 + 128;
-        percentagesX = 320 - statusScreen.mFont.StringWidth("000%") - 8;
-
-        currentY = (statusScreen.mFont.GetHeight() + 2) * 4;
-        timeY = currentY;
-
-        currentY += statusScreen.mFont.GetHeight() + 2;
-        parY = currentY;
-
-        currentY = 200 - statusScreen.mFont.GetHeight() - 8;
-        secretsY = currentY;
-
-        currentY -= statusScreen.mFont.GetHeight() + 2;
-        itemsY = currentY;
-
-        currentY -= statusScreen.mFont.GetHeight() + 2;
-        killsY = currentY;
+        return counterCurrent >= counterLimit;
     }
 
-    override void Draw()
+    TOB_StatusScreenCounter InitCounter(int limit, int increment = 3, int frequencyTics = 3)
     {
-        let cursor = (8, 8);
+        counterLimit = limit;
+        counterIncrement = increment;
+        counterFrequencyTics = frequencyTics;
 
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, cursor.x, cursor.y, "Floor");
-        cursor.y += statusScreen.mFont.GetHeight() + 2;
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, cursor.x, cursor.y, "Completed");
+        return self;
+    }
 
-        statusScreen.DrawTexture(bjTex, 320 - bjTexSize.x - 8, 8);
+    override void Tick()
+    {
+        super.Tick();
+        
+        if (!CounterIsDone() && ctx.mStatusScreen.bcnt & counterFrequencyTics)
+        {
+            counterCurrent += counterIncrement;
+            counterCurrent = clamp(counterCurrent, -counterLimit, counterLimit);
+        }
+    }
+
+    override void Skip()
+    {
+        super.Skip();
+        counterCurrent = counterLimit;
     }
 
     override bool IsDone()
     {
-        return ticsLeft <= 0;
+        return super.IsDone() || CounterIsDone();
     }
 }
 
-class TOB_TimeStatsScreen : TOB_InitialStatusScreen
+class TOB_TimeStatusState : TOB_StatusScreenCounter
 {
-    override void Draw()
-    {
-        super.Draw();
-
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, labelX, timeY, "Time");
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, timeStatsX, timeY, "00:00");
-
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, labelX, parY, "Par");
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, timeStatsX, parY, "00:00");
-    }
-}
-
-class TOB_KillsStatsScreen : TOB_TimeStatsScreen
-{
-    override void Draw()
-    {
-        super.Draw();
-
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, labelX, killsY, "Kills");
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, percentagesX, killsY, "100%");
-    }
-}
-
-class TOB_ItemsStatsScreen : TOB_KillsStatsScreen
-{
-    override void Draw()
-    {
-        super.Draw();
-
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, labelX, itemsY, "Items");
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, percentagesX, itemsY, "100%");
-    }
-}
-
-class TOB_SecretsStatsScreen : TOB_ItemsStatsScreen
-{
-    override void Draw()
-    {
-        super.Draw();
-
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, labelX, secretsY, "Secrets");
-        statusScreen.DrawText(statusScreen.mFont, Font.CR_RED, percentagesX, secretsY, "100%");
-    }
-}
-
-class TOB_SecretsFadeToBlack : TOB_SecretsStatsScreen
-{
-    const FADE_DURATION_TICS = 35 / 3;
-
-    float fadeTics;
+    readonly<int> totalSeconds;
+    readonly<int> totalMinutes;
+    readonly<int> parSeconds;
+    readonly<int> parMinutes;
 
     override void _Init()
     {
         super._Init();
 
-        fadeTics = 0;
-    }
-
-    override void Tick()
-    {
-        super.Tick();
-
-        fadeTics += 1;
-    }
-
-    override void Draw()
-    {
-        super.Draw();
-
-        Screen.Dim(Color(0, 0, 0), fadeTics / FADE_DURATION_TICS, 0, 0, Screen.GetWidth(), Screen.GetHeight());
-    }
-}
-
-class TOB_GetPsyched : TOB_StatusScreenState
-{
-    const FADE_DURATION_TICS = 35 / 3;
-
-    float fadeTics;
-
-    TextureID psychedTex;
-    Vector2 psychedTexSize;
-
-    override void _Init()
-    {
-        super._Init();
-
-        fadeTics = FADE_DURATION_TICS;
-
-        psychedTex = TexMan.CheckForTexture('graphics/belmondo/tob/g_psyched.png');
-        psychedTexSize = TexMan.GetScaledSize(psychedTex);
-    }
-
-    override void Tick()
-    {
-        super.Tick();
-
-        fadeTics -= 1;
-    }
-
-    override void Draw()
-    {
-        super.Draw();
-
-        statusScreen.DrawTexture(psychedTex, 160 - psychedTexSize.x / 2, 100 - psychedTexSize.y / 2);
-        Screen.Dim(Color(0, 0, 0), fadeTics / FADE_DURATION_TICS, 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        totalSeconds = Thinker.Tics2Seconds(ctx.mStatusScreen.wbs.totalTime);
+        totalSeconds %= 60;
+        totalMinutes = totalSeconds / 60;
+        parSeconds = Thinker.Tics2Seconds(ctx.mStatusScreen.wbs.parTime);
+        parMinutes = parSeconds / 60;
+        InitCounter(totalSeconds);
     }
 }
 
 class TOB_StatusScreen : StatusScreen
 {
-    Font mFont;
-    TOB_StatusScreenState statusScreenState;
+    TOB_StatusScreenContext ctx;
+    Array<TOB_StatusScreenState> statusScreenStateQueue;
+    Array<TOB_StatusScreenCounter> percentageCounters;
+    TOB_TimeStatusState timeStatusState;
+    TOB_StatusScreenCounter killsStatusState;
+    TOB_StatusScreenCounter itemsStatusState;
+    TOB_StatusScreenCounter secretsStatusState;
+    TOB_StatusScreenCounter fadeOutStatusScreenState;
+    TOB_StatusScreenCounter waitAfterFadeOutScreenState;
+    TOB_StatusScreenCounter fadeInStatusScreenState;
+    int currentStateIndex;
+
+    static int CalcPercentage(int p, int b)
+    {
+        return b == 0 ? 100 : p * 100 / b;
+    }
+
+    TOB_StatusScreenCounter Wait(int tics)
+    {
+        return TOB_StatusScreenCounter(new('TOB_StatusScreenCounter').InitCounter(tics).Init(ctx));
+    }
+
+    TOB_StatusScreenState WaitForInput()
+    {
+        return new('TOB_StatusScreenState').Init(ctx);
+    }
+
+    void OnStatusStateFinished(TOB_StatusScreenState sss)
+    {
+        if (sss == waitAfterFadeOutScreenState)
+        {
+            fadeOutStatusScreenState.shouldDraw = false;
+            timeStatusState.shouldDraw = false;
+
+            for (let i = 0; i < percentageCounters.Size(); i++)
+            {
+                percentageCounters[i].shouldDraw = false;
+            }
+        }
+    }
 
     override void InitStats()
     {
-        mFont = 'BIGFONT';
+        super.InitStats();
 
-        statusScreenState = (
-            new('TOB_InitialStatusScreen')
-                .Init(self)
-                .Wait(gameTicRate)
-                .Then(new('TOB_TimeStatsScreen')
-                          .Init(self)
-                          .Wait(gameTicRate)
-                .Then(new('TOB_KillsStatsScreen')
-                          .Init(self)
-                          .Wait(gameTicRate)
-                .Then(new('TOB_ItemsStatsScreen')
-                          .Init(self)
-                          .Wait(gameTicRate)
-                .Then(new('TOB_SecretsStatsScreen')
-                          .Init(self)
-                          .Wait(gameTicRate)
-                .Then(new('TOB_SecretsFadeToBlack')
-                          .Init(self)
-                          .Wait(gameTicRate)
-                .Then(new('TOB_GetPsyched')
-                          .Init(self)
-                          .Wait(gameTicRate)
-                          .Finish()))))))
+        Font fnt = 'BIGFONT';
+        
+        ctx = new('TOB_StatusScreenContext').Init(self, fnt);
+
+        timeStatusState = TOB_TimeStatusState(new('TOB_TimeStatusState').Init(ctx));
+
+        killsStatusState = TOB_StatusScreenCounter(
+            new('TOB_StatusScreenCounter')
+                .InitCounter(CalcPercentage(Plrs[me].skills, wbs.maxKills))
+                .Init(ctx)
         );
+
+        itemsStatusState = TOB_StatusScreenCounter(
+            new('TOB_StatusScreenCounter')
+                .InitCounter(CalcPercentage(Plrs[me].sitems, wbs.maxItems))
+                .Init(ctx)
+        );
+
+        secretsStatusState = TOB_StatusScreenCounter(
+            new('TOB_StatusScreenCounter')
+                .InitCounter(CalcPercentage(Plrs[me].ssecret, wbs.maxSecret))
+                .Init(ctx)
+        );
+
+        fadeOutStatusScreenState = TOB_StatusScreenCounter(
+            new('TOB_StatusScreenCounter')
+                .InitCounter(gameTicRate / 4, 1)
+                .Init(ctx)
+                .SetCanSkip(false)
+        );
+
+        waitAfterFadeOutScreenState = TOB_StatusScreenCounter(new('TOB_StatusScreenCounter').InitCounter(gameTicRate / 2).Init(ctx));
+
+        fadeInStatusScreenState = TOB_StatusScreenCounter(
+            new('TOB_StatusScreenCounter')
+                .InitCounter(gameTicRate / 4, 1)
+                .Init(ctx)
+                .SetCanSkip(false)
+        );
+
+        percentageCounters.Push(killsStatusState);
+        percentageCounters.Push(itemsStatusState);
+        percentageCounters.Push(secretsStatusState);
+
+        statusScreenStateQueue.Push(Wait(gameTicRate));
+        statusScreenStateQueue.Push(timeStatusState);
+        statusScreenStateQueue.Push(Wait(gameTicRate));
+        statusScreenStateQueue.Push(killsStatusState);
+        statusScreenStateQueue.Push(Wait(gameTicRate));
+        statusScreenStateQueue.Push(itemsStatusState);
+        statusScreenStateQueue.Push(Wait(gameTicRate));
+        statusScreenStateQueue.Push(secretsStatusState);
+        statusScreenStateQueue.Push(WaitForInput());
+        statusScreenStateQueue.Push(fadeOutStatusScreenState);
+        statusScreenStateQueue.Push(waitAfterFadeOutScreenState);
+        statusScreenStateQueue.Push(fadeInStatusScreenState);
     }
 
     override void UpdateStats()
     {
-        if (statusScreenState.IsDone())
-        {
-            if (statusScreenState.next)
-            {
-                statusScreen.PlaySound("intermission/nextstage");
-                statusScreenState = statusScreenState.next;
-            }
+        super.UpdateStats();
 
-            if (statusScreenState.isLast)
-            {
-                curState = ShowNextLoc;
-            }
+        let statusState = statusScreenStateQueue[currentStateIndex];
+
+        statusState.shouldDraw = true;
+        statusState.Tick();
+
+        if (statusState.IsDone())
+        {
+            let oldState = statusState;
+
+            currentStateIndex += 1;
+            currentStateIndex = clamp(currentStateIndex, 0, statusScreenStateQueue.Size() - 1);
+            OnStatusStateFinished(oldState);
+        }
+    }
+
+    override bool OnEvent(InputEvent e)
+    {
+        let currentState = statusScreenStateQueue[currentStateIndex];
+
+        if (e.type == InputEvent.Type_KeyDown && currentState.CanBeSkipped())
+        {
+            currentState.Skip();
         }
 
-        statusScreenState.Tick();
+        return super.OnEvent(e);
     }
 
     override void DrawStats()
     {
-        statusScreenState.Draw();
+        super.DrawStats();
+
+        let labelY = 0;
+
+        if (timeStatusState.shouldDraw)
+        {
+            DrawText(ctx.mFont, Font.CR_UNTRANSLATED, 0, labelY, String.Format("%02d:%02d", timeStatusState.counterCurrent / 60, timeStatusState.counterCurrent));
+            labelY += ctx.mFont.GetHeight();
+            DrawText(ctx.mFont, Font.CR_UNTRANSLATED, 0, labelY, String.Format("%02d:%02d", timeStatusState.parMinutes, timeStatusState.parSeconds));
+            labelY += ctx.mFont.GetHeight();
+        }
+
+        for (let i = 0; i < percentageCounters.Size(); i++)
+        {
+            let currentCounterState = percentageCounters[i];
+
+            if (!currentCounterState.shouldDraw)
+            {
+                continue;
+            }
+
+            DrawText(ctx.mFont, Font.CR_UNTRANSLATED, 0, labelY, String.Format("%3d%%", currentCounterState.counterCurrent));
+            labelY += ctx.mFont.GetHeight();
+        }
+
+        if (fadeOutStatusScreenState.shouldDraw)
+        {
+            Screen.Dim(Color(0, 0, 0), fadeOutStatusScreenState.counterCurrent / double(fadeOutStatusScreenState.counterLimit), 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        }
+
+        if (fadeInStatusScreenState.shouldDraw)
+        {
+            DrawText(ctx.mFont, Font.CR_UNTRANSLATED, 0, 0, "Get Psyched!");
+            Screen.Dim(Color(0, 0, 0), 1 - fadeInStatusScreenState.counterCurrent / double(fadeInStatusScreenState.counterLimit), 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        }
     }
 }
